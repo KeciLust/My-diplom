@@ -9,6 +9,37 @@
 </head>
 
 <body>
+  <div class="popup">
+    <div class="popup-container">
+      <div class="popup-reset">
+        <button class="popup-reset-button" type="button"><span class="search-text">Закрыть</span></button>
+      </div>
+      <h2 class="title popup-title">Ваш фидбек</h2>
+      <form class="popup-form">
+        <label class="popup-box">
+          <span class="popup-text">Как часто вы заходите на сайт?</span>
+          <select class="popup-radio-input input popup-input">
+            <option class="popup-select-item">Никогда</option>
+            <option class="popup-select-item">Раз в неделю</option>
+            <option class="popup-select-item" selected>Почти каждый день</option>
+            <option class="popup-select-item">Несколько раз в день</option>
+          </select>
+        </label>
+        <label class=" popup-radio">
+          <span class="popup-text">Вы подписаны на e-mail рассылку?</span>
+          <input type="radio" name="radio-group" class=""><span class="popup-text">Да</span>
+        </label>
+        <label class="popup-box popup-radio">
+          <input type="radio" name="radio-group" class=""><span class="popup-text">Нет</span>
+        </label>
+        <label class="popup-box">
+          <span class="popup-text">Раскажите, какой контент вы хотели бы видеть на нашем сайте?</span>
+          <input type="text" class="popup-textarea input popup-input" placeholder="Может, больше рецептов?"></input>
+        </label>
+       <button class="popup-button button" type="submit">Отправить</button> 
+      </form>
+    </div>
+  </div>
   <header class="header">
     <div class="container">
       <div class="header-box">
@@ -269,7 +300,7 @@
     </aside>
   </div>
   <section class="shop container">
-    <h2 class="title">Наши изделия</h2>
+    <h2 class="title shop-title">Наши изделия</h2>
     <div class="shop-containers">
       <article class="shop-container">
         <div class="shop-imgs">

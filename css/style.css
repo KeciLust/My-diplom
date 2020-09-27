@@ -17,6 +17,66 @@
     font-style: normal;
     font-size: 15px;
     line-height: 1.46;
+    position: relative;
+  }
+  .popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+  }
+  .popup::before {
+    content: "";
+    position: absolute;
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+  }
+  .popup-reset-button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 0;
+    top: -50px;
+    background-image: url(../svg/form-x.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+  }
+  .popup-container {
+    position: absolute;
+    background-color: white; 
+    box-sizing: border-box;
+    padding: 50px 25px;
+  }
+  .popup-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 26px;
+  }
+  .popup-text {
+    font-size: 13px;
+    font-weight: 700;
+    padding-bottom: 8px;
+  }
+  .popup-radio-input {
+    background-image: url(../svg/form-arrows.svg);
+    background-size: 9px;
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+  }
+  .popup-textarea {
+    width: 100%;
+    min-height: 134px;
+  }
+  .popup-input:focus {
+    outline: 1px solid #b59f5b;
+  }
+  .popup-button {
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
   }
   .header {
     background-color: #000000;
@@ -25,8 +85,6 @@
     background-position: center;
     position: relative;
     color: #ffffff;
-    padding-bottom: 145px;
-    padding-top: 28px;
   }
   .header::before {
     content: "";
@@ -40,8 +98,6 @@
   }
   .container {
     position: relative;
-    max-width: 1170px;
-    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -55,7 +111,6 @@
     height: 3px;
     background-color: white;
     position: relative;
-    margin-right: 35px;
   }
   .header-menu-img::after {
     content: "";
@@ -102,7 +157,6 @@
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    margin-top: 125px;
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -125,7 +179,6 @@
   }
   .trend-box {
     width: calc((100% - 9px) / 4);
-    height: 320px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -206,9 +259,6 @@
   .trend-4 {
     background-image: url(../img/trend4.jpg);
   }
-  .main-item:nth-child(n + 2) {
-    margin-top: 59px;
-  }
   .main-item-list {
     list-style-type: none;
     display: flex;
@@ -236,12 +286,10 @@
   .main-item-title {
     margin-top: 5px;
     padding: 0;
-    margin-bottom: 35px;
     line-height: 24px;
     font-weight: 700;
     color: #000000;
     text-transform: uppercase;
-    font-size: 20px;
   }
   .main-item-title-link {
     text-decoration: none;
@@ -252,7 +300,6 @@
   }
   .main-item-data-author {
     font-size: 12px;
-    margin-bottom: 50px;
   }
   .main-data {
     color: #888888;
@@ -264,16 +311,12 @@
     font-weight: 700;
     font-style: normal;
   }
-  .sidebar {
-    width: 272px;
-  }
   .sidebar-block:nth-child(n + 2) {
     margin-top: 60px;
   }
   .title {
     margin: 0;
     padding: 0;
-    font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
@@ -361,9 +404,6 @@
     height: 49px;
     cursor: pointer;
   }
-  .email {
-    width: 272px;
-  }
   .email:focus {
     outline: 1px solid #b59f5b;
   }
@@ -389,6 +429,9 @@
     text-transform: uppercase;
     margin-right: 6px;
     margin-bottom: 6px;
+  }
+  .tag-box-item:last-child {
+    margin-right: 0;
   }
   .tags-link {
     color: inherit;
@@ -435,21 +478,28 @@
     padding-left: 23px;
     padding-right: 23px;
   }
-  
+  .shop-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .shop-imgs {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .shop-box {
     position: relative;
+    flex-grow: 1;
   }
   .shop-box::before {
     content: "";
     position: absolute;
     border: 3px solid #d3c59d;
-    top: -50px;
+    top: -40px;
     left: -20px;
     right: -20px;
     bottom: -25px;
   }
   .shop-box-title {
-    font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
     margin: 0;
@@ -546,7 +596,6 @@
   }
   .footer-copyright {
     font-size: 12px;
-    margin-top: 74px;
     text-align: center;
   }
   .copyright-link {
@@ -554,8 +603,16 @@
     color: #999999;
   }
   @media (min-width: 1221px) {
+    .popup-container {
+      width: 390px;
+      height: 590px;
+      top: calc(50% - 295px); 
+      left: calc(50% - 195px);  
+    }
     .header {
       background-image: url(../img/banner-bg.jpg);
+      padding-bottom: 145px;
+      padding-top: 28px;
     }
     .general-container {
       display: flex;
@@ -564,6 +621,8 @@
     .container {
       padding-left: 15px;
       padding-right: 15px;
+      max-width: 1170px;
+      width: 100%;
     }
     .logo {
       width: 179px;
@@ -574,20 +633,31 @@
     .header-title {
       font-size: 45px;
     }
+    .header-title-container {
+      max-width: 690px;
+      margin-top: 125px;
+    }
     .trends-container, .general-container {
       margin-top: 60px;
+    }
+    .trend-box {
+      height: 320px;
     }
     .trend-box:nth-child( n + 2 ) {
       margin-left: 3px;
     }
     .trends-container .trends-title {
       font-size: 20px;
+      margin-bottom: 28px;
     }
     .trend-title {
       font-size: 20px;
     }
     .main {
       width: 778px;
+    }
+    .main-item:nth-child(n + 2) {
+      margin-top: 59px;
     }
     .main-item {
       display: flex;
@@ -597,16 +667,55 @@
       width: 380px;
       margin-right: 30px;
     }
+    .main-item-title {
+      margin-bottom: 35px;
+      font-size: 20px;
+    }
+    .main-item-data-author {
+      margin-bottom: 50px;
+    }
+    .title {
+      font-size: 14px;
+    }
+    .sidebar {
+      width: 272px;
+    }
+    .email {
+      width: 272px;
+    }
     .shop {
       margin-top: 60px;
+    }
+    .shop-title {
+      font-size: 20px;
     }
     .shop-container {
       width: 300px;
     }
+    .shop-imgs {
+      width: 300px;
+    }
+    .shop-img {
+      width: 300px;
+    }
+    .shop-box-title {
+      font-size: 20px;
+    }
+    .footer-copyright {
+      margin-top: 74px;
+    }
   }
   @media (min-width: 768px) and (max-width: 1220px) {
+    .popup-container {
+      width: 390px;
+      height: 590px;
+      top: calc(50% - 295px); 
+      left: calc(50% - 195px);  
+    }
     .header {
       background-image: url(../img/banner-bg-tablet.jpg);
+      padding-bottom: 124px;
+      padding-top: 40px;
     }
     .general-container {
       display: flex;
@@ -615,6 +724,7 @@
     .container {
       padding-left: 35px;
       padding-right: 35px;
+      max-width: 700px;
     }
     .logo {
       width: 158px;
@@ -628,11 +738,16 @@
     .header-title {
       font-size: 40px;
     }
+    .header-title-container {
+      max-width: 615px;
+      margin-top: 100px;
+    }
     .trends-container, .general-container {
       margin-top: 50px;
     }
     .trend-box {
       width: calc((100% - 3px) / 2);
+      height: 247px;
     }
     .trend-box:nth-child( 2n + 2 ) {
       margin-left: 3px;
@@ -642,6 +757,7 @@
     }
     .trends-container .trends-title {
       font-size: 18px;
+      margin-bottom: 20px;
     }
     .trend-title {
       font-size: 17px;
@@ -649,65 +765,177 @@
     .main {
       width: 390px;
     }
+    .main-item:nth-child(n + 2) {
+      margin-top: 41px;
+    }
     .main-img {
       width: 390px;
       margin-right: 35px;
     }
+    .main-item-box {
+      margin-top: 8px;
+      border-bottom: 3px solid #eeeeee;
+      padding-bottom: 8px;
+    }
+    .main-item-title {
+      margin-bottom: 35px;
+      font-size: 17px;
+    }
+    .main-item-data-author {
+      margin-bottom: 35px;
+    }
+    .title {
+      font-size: 14px;
+    }
+    .sidebar {
+      max-width: 272px;
+    }
+    .email {
+      width: 272px;
+    }
     .shop {
       margin-top: 50px;
     }
+    .shop-title {
+      font-size: 18px;
+    }
     .shop-container {
-      width: 292px;
+      width: 290px;
+    }
+    .shop-imgs {
+      width: 290px;
+    }
+    .shop-img {
+      width: 290px;
+    }
+    .shop-container:nth-child(n + 3) {
+      margin-top: 50px;
+    }
+    .shop-box-title {
+      font-size: 17px;
+    }
+    .footer-copyright {
+      margin-top: 45px;
     }
   }
   @media (max-width: 767px) {
+    .popup-container {
+      max-width: 330px;
+      height: 550px;
+      top: calc(50% - 275px); 
+      left: calc(50% - 165px); 
+    }
     .header {
       background-image: url(../img/banner-mobile.jpg);
+      padding-bottom: 215px;
+      padding-top: 30px;
     }
     .container {
       padding-left: 15px;
       padding-right: 15px;
+      max-width: 330px;
+      margin-right: auto;
+      margin-left: auto;
     }
     .logo {
       width: 269px;
     }
     .header-box {
      flex-direction: column-reverse; 
+     height: 255px;
+    }
+    .header-menu {
+      align-self: flex-end;
     }
     .header-menu-list {
       display: none;
     }
     .header-menu-img {
-      display: block;
+      display: flex;
     }
     .header-title {
       font-size: 26px;
+    }
+    .header-title-container {
+      max-width: 280px;
+      margin-top: 40px;
     }
     .trends-container, .general-container {
       margin-top: 45px;
     }
     .trend-box {
-      width: 100%
+      width: 100%;
+      height: 230px;
     }
     .trend-box:nth-child(n + 2) {
       margin-top: 3px;
     }
     .trends-container .trends-title {
       font-size: 16px;
+      margin-bottom: 30px;
     }
     .trend-title {
       font-size: 16px;
     }
-    .main {
-      width: 100%;
+    .main-item:nth-child(n + 2) {
+      margin-top: 35px;
     }
     .main-img {
-      width: 100%;
+      width: 330px;
+    }
+    .main-item-title {
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+    .main-item-data-author {
+      margin-bottom: 25px;
+    }
+    .main-item-box {
+      margin-top: 8px;
+      border-bottom: 3px solid #eeeeee;
+      padding-bottom: 20px;
+    }
+    .main-item-text {
+      font-size: 14px;
+    }
+    .title {
+      font-size: 16px;
+    }
+    .sidebar {
+      max-width: 330px;
+      margin-top: 45px;
+    }
+    .search {
+      width: 281px;
+    }
+    .email {
+      width: 330px;
+    }
+    .email-button {
+      width: 330px;
     }
     .shop {
       margin-top: 45px;
     }
+    .shop-title {
+      font-size: 16px;
+    }
+    .shop-container:nth-child(n + 2) {
+      margin-top: 50px;
+    }
+    .shop-imgs {
+      width: 285px;
+    }
+    .shop-img {
+      width: 285px;
+    }
     .shop-container {
-      width: 284px;
+      width: 331px;
+    }
+    .shop-box-title {
+      font-size: 17px;
+    }
+    .footer-copyright {
+      margin-top: 50px;
     }
   }
