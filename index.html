@@ -9,41 +9,47 @@
 </head>
 
 <body>
-  <div class="popup">
+  <form class="popup">
     <div class="popup-container">
       <div class="popup-reset">
         <button class="popup-reset-button" type="button"><span class="search-text">Закрыть</span></button>
       </div>
       <h2 class="title popup-title">Ваш фидбек</h2>
-      <form class="popup-form">
+      <div class="popup-form">
         <label class="popup-box">
           <span class="popup-text">Как часто вы заходите на сайт?</span>
-          <select class="popup-radio-input input popup-input">
+          <select class="input popup-input">
             <option class="popup-select-item">Никогда</option>
             <option class="popup-select-item">Раз в неделю</option>
             <option class="popup-select-item" selected>Почти каждый день</option>
             <option class="popup-select-item">Несколько раз в день</option>
           </select>
         </label>
-        <label class=" popup-radio">
-          <span class="popup-text">Вы подписаны на e-mail рассылку?</span>
-          <input type="radio" name="radio-group" class=""><span class="popup-text">Да</span>
+      </div>
+      <div class="popup-form">
+        <span class="popup-text">Вы подписаны на e-mail рассылку?</span>
+        <label class="popup-radio">
+          <input type="radio" name="radio-group" class="radio"><span class="popup-radio-text">Да</span>
         </label>
-        <label class="popup-box popup-radio">
-          <input type="radio" name="radio-group" class=""><span class="popup-text">Нет</span>
+        <label class="popup-radio">
+          <input type="radio" name="radio-group" class="radio"><span class="popup-radio-text">Нет</span>
         </label>
+      </div>
+      <div class="popup-form">
         <label class="popup-box">
           <span class="popup-text">Раскажите, какой контент вы хотели бы видеть на нашем сайте?</span>
-          <input type="text" class="popup-textarea input popup-input" placeholder="Может, больше рецептов?"></input>
+          <textarea class="popup-textarea input" placeholder="Может, больше рецептов?"></textarea>
         </label>
-       <button class="popup-button button" type="submit">Отправить</button> 
-      </form>
+        <div class="popup-form">
+          <button class="popup-button button" type="submit">Отправить</button>
+        </div>
+      </div>
     </div>
-  </div>
+  </form>
   <header class="header">
     <div class="container">
       <div class="header-box">
-        <img src="./svg/noemi-logo.svg" alt="noemi" class="logo">
+        <a href="#0" class="logo-link"> <img src="./svg/noemi-logo.svg" alt="noemi" class="logo"></a>
         <nav class="header-menu">
           <div class="header-menu-img"><span class="header-menu-img-text">Меню</span></div>
           <ul class="header-menu-list">
@@ -319,9 +325,9 @@
                 <li class="shop-item price">800 ₽</li>
               </ul>
             </div>
-            <form action="" class="form-shop">
-              <button type="submit" class="shop-button button">В магазин</button>
-            </form>
+            <div class="shop-button button">
+              <a href="#0" class="shop-button-link "> В магазин</a>
+            </div>
           </div>
         </div>
       </article>
@@ -341,9 +347,9 @@
                 <li class="shop-item price">3500 ₽</li>
               </ul>
             </div>
-            <form action="" class="form-shop">
-              <button type="submit" class="shop-button button">В магазин</button>
-            </form>
+            <div class="shop-button button">
+              <a href="#0" class="shop-button-link "> В магазин</a>
+            </div>
           </div>
         </div>
       </article>
@@ -364,9 +370,9 @@
                 <li class="shop-item price">400 ₽</li>
               </ul>
             </div>
-            <form action="" class="form-shop">
-              <button type="submit" class="shop-button button">В магазин</button>
-            </form>
+            <div class="shop-button button">
+              <a href="#0" class="shop-button-link "> В магазин</a>
+            </div>
           </div>
         </div>
       </article>
